@@ -1,0 +1,14 @@
+ion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ion-label {
+    flex-grow: 1;
+  }
+  
+  ion-button {
+    flex-shrink: 0;
+  }
+  

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Tasks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Input Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add New Task</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input [(ngModel)]="newItem" placeholder="Enter Title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="newDescription" placeholder="Enter description"></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="addItem()">Add</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Item List Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Item List</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of items; let i = index">
+          <ion-label>
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+          </ion-label>
+          <ion-button fill="clear" color="danger" (click)="deleteItem(i)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
